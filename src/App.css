@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .App-light {
   background-color: white;
   color: black;
@@ -7,3 +14,4 @@
   background-color: #121212;
   color: white;
 }
+
