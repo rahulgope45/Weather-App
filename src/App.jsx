@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import './App.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 
 import Weatherapp from './componnets/wreatherapp'

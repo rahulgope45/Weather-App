@@ -1,0 +1,35 @@
+.Search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid currentColor; /* adapts to light or dark text color */
+  border-radius: 16px;
+  padding: 6px 12px;
+  background-color: transparent;
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-icon i {
+  font-size: 1.2rem;
+}
+
+.search-input {
+  flex: 1;
+}
+
+.SearchCity {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.Settings-container{
+  display: flex;
+   justify-content: space-between;
+  gap: 12px; /* or whatever spacing you prefer */
+  align-items: center; /* optional: vertically align */
+}
