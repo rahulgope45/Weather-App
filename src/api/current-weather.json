@@ -5,28 +5,28 @@
   "timezone": "Asia/Kolkata",
   "units": "metric",
   "current": {
-    "icon": "cloudy",
-    "icon_num": 30,
-    "summary": "Cloudy",
-    "temperature": 27.8,
-    "feels_like": 30,
-    "wind_chill": 30.5,
-    "dew_point": 17.2,
+    "icon": "overcast",
+    "icon_num": 7,
+    "summary": "Overcast",
+    "temperature": 34.5,
+    "feels_like": 37.2,
+    "wind_chill": 38.2,
+    "dew_point": 18.8,
     "wind": {
-      "speed": 3.5,
-      "gusts": 4.1,
-      "angle": 127,
-      "dir": "SE"
+      "speed": 2.4,
+      "gusts": 3.6,
+      "angle": 109,
+      "dir": "ESE"
     },
     "precipitation": {
       "total": 0,
       "type": "none"
     },
-    "cloud_cover": 88,
-    "ozone": 278.32,
+    "cloud_cover": 92,
+    "ozone": 279.93,
     "pressure": 995,
-    "uv_index": 0,
-    "humidity": 52,
-    "visibility": 24.14
+    "uv_index": 5.97,
+    "humidity": 39,
+    "visibility": 24.13
   }
 }

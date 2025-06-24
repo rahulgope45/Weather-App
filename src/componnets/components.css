@@ -35,3 +35,80 @@
 }
 
 
+/* Main Container */
+
+.Main-Container{
+   display: flex;
+  margin-top: 10px;
+  align-items: stretch; /* So both children stretch to same height if needed */
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.Temperature{
+  flex: 1; /* Makes both take equal width */
+  border: 1px solid currentColor;
+  border-radius: 16px;
+  padding: 6px 12px;
+  background-color: transparent;
+  max-width: 300px; /* Optional: for limiting growth */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weather-icons img {
+  width: 200px;
+  height: 200px;
+}
+
+.other-Info{
+   flex: 1; /* Makes both take equal width */
+  border: 1px solid currentColor;
+  border-radius: 16px;
+  padding: 6px 12px;
+  background-color: transparent;
+  max-width: 500px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weather-icons img {
+  width: 100px;
+  height: 100px;
+  
+}
+
+
+.other-Info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1rem; /* Space between widgets */
+  padding: 1rem;
+  
+}
+
+.widget {
+  background-color: #c8c2c2;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.widget-container .info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon i {
+  font-size: 2rem;
+  color: #111212; /* Customize icon color */
+}
+
+.value-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
