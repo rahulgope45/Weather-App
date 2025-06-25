@@ -26,7 +26,7 @@ function Weatherapp(){
     }=weatherData
 
       const units = {
-    precipitation: 'mm',
+    precipitation: 'mm/h',
     wind_speed: 'km/h',
     humidity: '%',
     uv_index: '',
