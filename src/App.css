@@ -1,4 +1,5 @@
-body {
+html,body {
+  height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,12 +7,12 @@ body {
 }
 
 .App-light {
-  background-color: white;
+  background-color: rgb(252, 252, 252);
   color: black;
 }
 
 .App-dark {
-  background-color: #121212;
+  background-color: #201f23;
   color: white;
 }
 

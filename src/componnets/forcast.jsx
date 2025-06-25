@@ -8,7 +8,7 @@ function Forcast({title,type,data}) {
         <div className="forecast-container">
             <h3>{title}</h3>
             <div className="F-wideget-container">
-                {data.map((singleData ,index) =>(
+                {data.map((singleData ,index ) =>(
                     <div key={index} >
                         {type === 'hourly' ?(
                                 <HourlyforecastWidget data ={singleData}/>

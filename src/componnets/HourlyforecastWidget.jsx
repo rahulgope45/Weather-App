@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HourlyforecastWidget(data) {
+function HourlyforecastWidget({data}) {
 
   const{date ,icon ,summary ,temperature, percipitaion ,wind} =data
 

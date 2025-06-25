@@ -1,4 +1,5 @@
 import { getCurrentWheather } from '../api'
+import Weatheicon from './Weatheicon';
 import React,{useState,useEffect} from 'react'
 function Weatherapp(){
 
@@ -88,8 +89,8 @@ function Weatherapp(){
         <div className='Main-Container'>
         < div className='Temperature'>
         <div className='weather-icons'>
-            <img src={`dist/weather_icons/set03/big/${weatherData.icon_num}.png`}
-            alt='Weather-icon'/>
+           
+            <Weatheicon iconnumber={icon_num} alt={summary}/>
         </div>
         <div className='value-summary'>
             <div className='value-temp'>
