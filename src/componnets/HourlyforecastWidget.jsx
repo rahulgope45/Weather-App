@@ -6,6 +6,36 @@ function HourlyforecastWidget({data}) {
   const{date ,icon ,summary ,temperature, precipitation ,wind} =data
 
   console.log(data)
+
+
+  //date format
+const now_Date= {
+  day: new Intl.DateTimeFormat(navigator.language , {
+    weekday : 'short',
+    day: '2-digit',
+    month: '2-digit'
+  }).format(new Date()),
+  time: new Intl.DateTimeFormat(navigator.language,{
+    hour: "2-digit",
+    minute: '2-digit'
+  }).format(new Date().setMinutes(0))
+}
+
+const Weather_Date= {
+  day: new Intl.DateTimeFormat(navigator.language , {
+    weekday : 'short',
+    day: '2-digit',
+    month: '2-digit'
+  }).format(new Date(date)),
+  time: new Intl.DateTimeFormat(navigator.language,{
+    hour: "2-digit",
+    minute: '2-digit'
+  }).format(new Date(date).setMinutes(0))
+}
+
+Weather_Date.day = Weather_Date.day === now_Date.day && Weather_Date.time === now_Date.time? 'Current' : Weather_Date.day;
+
+
   return (
     <div className='H-widget'>
       <div className='H-icon'>
@@ -23,8 +53,8 @@ function HourlyforecastWidget({data}) {
             <i class="bi bi-send-fill"></i></div>
         </div>
         
-      <div className='H-day'><p>{date} </p> </div>
-      <div className='H-time'>{date}</div>
+      <div className='H-day'><p>{Weather_Date.day} </p> </div>
+      <div className='H-time'>{Weather_Date.time}</div>
       <div className='H-icon-temp'>
         
       </div>
