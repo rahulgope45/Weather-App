@@ -5,7 +5,7 @@ function HourlyforecastWidget({data}) {
 
   const{date ,icon ,summary ,temperature, precipitation ,wind} =data
 
-  console.log(data)
+  //console.log(data)
 
 
   //date format
@@ -38,6 +38,9 @@ Weather_Date.day = Weather_Date.day === now_Date.day && Weather_Date.time === no
 
   return (
     <div className='H-widget'>
+    <div className='H-day'><b>{Weather_Date.day} </b> </div>
+      <div className='H-time'>{Weather_Date.time}</div>
+      <br/>
       <div className='H-icon'>
           <Weatheicon iconnumber={icon} alt={summary}/>
         </div>
@@ -53,11 +56,8 @@ Weather_Date.day = Weather_Date.day === now_Date.day && Weather_Date.time === no
             <i class="bi bi-send-fill"></i></div>
         </div>
         
-      <div className='H-day'><p>{Weather_Date.day} </p> </div>
-      <div className='H-time'>{Weather_Date.time}</div>
-      <div className='H-icon-temp'>
-        
-      </div>
+      
+      
 
     </div>
   )
