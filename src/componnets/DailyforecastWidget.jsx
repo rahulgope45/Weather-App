@@ -11,7 +11,7 @@ function DailyforecastWidget({data}) {
 } =data
 
 
-console.log(data)
+//console.log(data)
 
   //date format
 const now_Date= {

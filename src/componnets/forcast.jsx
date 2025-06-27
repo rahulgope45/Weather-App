@@ -1,5 +1,6 @@
 import HourlyforecastWidget from './HourlyforecastWidget'
 import DailyforecastWidget from './DailyforecastWidget'
+import Horizontalscroll from './Horizontalscroll'
 
 
 function Forcast({title,type,data}) {
@@ -7,7 +8,7 @@ function Forcast({title,type,data}) {
     <div className="Forecast">
         <div className="forecast-container">
             <h3>{title}</h3>
-            <div className="F-wideget-container">
+            <Horizontalscroll className="F-wideget-container">
                 {data.map((singleData ,index ) =>(
                     <div key={index} >
                         {type === 'hourly' ?(
@@ -17,7 +18,7 @@ function Forcast({title,type,data}) {
                             )}
                     </div>
                 ))}
-            </div>
+            </Horizontalscroll>
         </div>
         
     </div>
