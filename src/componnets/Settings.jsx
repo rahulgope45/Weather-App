@@ -1,27 +1,37 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import './Search.css';
+import ThemeContext from '../constext/theme.context';
+import { Themeprovider } from '../constext/theme.context';
 
 
 
 function Settings() {
 
 
-const [darkMode,setdarkMode] = useState(false)
+const { darkMode, setdarkMode } = useContext(ThemeContext);
 
 const toogleTheme =()=>{
-  setdarkMode(prev => !prev)
+  //console.log('setDarkMode' ,setdarkMode)
+  
+  if(typeof setdarkMode == 'function'){
+    setdarkMode(prev => !prev)
+  }else{
+    console.error('error')
+  }
 }
+
+
 
   return (
     <div className='Settings-container'>
       <div className='Theme-Toggler' onClick={toogleTheme}>
         {darkMode ?(
-           <div className='Light-theme-button active'>
+           <div className={`Light-theme-button theme-toggle-animate ${darkMode ? '' : 'active'}`}>
           <i className="bi bi-brightness-high-fill"></i>
 
         </div>
         ):(
-          <div className='Dark-theme-button active'>
+          <div className={`Dark-theme-button theme-toggle-animate ${darkMode ? 'active' :'' }`}>
           <i className="bi bi-moon-fill"></i>
 
         </div>

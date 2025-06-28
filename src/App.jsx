@@ -1,7 +1,9 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import './App.css'
+import './componnets/components.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Forcast from './componnets/forcast';
+import ThemeContext from './constext/theme.context';
 
 
 import Weatherapp from './componnets/wreatherapp'
@@ -10,18 +12,20 @@ import { getDailyForecast ,getHourlyForecast } from './api';
 
 function App() {
 
-  const [screen,setScreen] =useState(false)
+  const {darkMode} = useContext(ThemeContext)
 
-  const ToogleText = () => setScreen(prev => !prev) 
+  // const [screen,setScreen] =useState(false)
+
+  // const ToogleText = () => setScreen(prev => !prev) 
 
   
 
 
   return (
-    <div className= {screen ? 'App-dark' : 'App-light'}>
+    <div className= {`App-${darkMode ? 'dark' : 'light'}`}>
      
-    <Header screen={screen} />
-     <button onClick={ToogleText} >{screen ? 'Light Mode' : 'Dark Mode'}</button>
+    <Header  />
+     {/* <button onClick={ToogleText} >{screen ? 'Light Mode' : 'Dark Mode'}</button> */}
     <Weatherapp/>
     <Forcast type='hourly' title ='HOURLY FORECAST' data={getHourlyForecast()}/>
     <Forcast type='dail' title ='21 DAYS FORECAST'  data={getDailyForecast()}/>

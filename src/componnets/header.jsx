@@ -2,13 +2,16 @@ import './components.css';
 import Place from './Place';
 import Search from './Search';
 import Settings from './Settings';
+import ThemeContext from '../constext/theme.context';
 
 
 import React from 'react'
 
 function Header({screen}) {
+
+  
   return (
-    <div className={`Header-container ${screen ? 'App-dark' : 'App-light'}`}>
+    <div className="Header-container">
         <Place/>
         <Search/>
         <Settings/>

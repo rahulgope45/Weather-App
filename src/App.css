@@ -9,10 +9,21 @@ html,body {
 .App-light {
   background-color: rgb(252, 252, 252);
   color: black;
+   backdrop-filter: blur(8px); /* Optional: for glassy look */
+  transition: all 0.3s ease;
 }
 
 .App-dark {
-  background-color: #201f23;
+  background-color: #141217;
   color: white;
+   backdrop-filter: blur(8px); /* Optional: for glassy look */
+  transition: all 0.3s ease;
+}
+
+.App-light {
+  --header-bg: rgba(255, 255, 255, 0.5);
+}
+.App-dark {
+  --header-bg: rgba(0, 0, 0, 0.3);
 }
 

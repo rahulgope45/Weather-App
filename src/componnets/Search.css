@@ -33,3 +33,30 @@
   gap: 12px; /* or whatever spacing you prefer */
   align-items: center; /* optional: vertically align */
 }
+
+
+.theme-toggle-animate {
+  animation: fadeZoom 0.4s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 45%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Glow on hover */
+.theme-toggle-animate:hover {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6), 0 0 20px rgba(0, 128, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* Keyframes for initial toggle animation */
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
