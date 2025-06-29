@@ -2,7 +2,7 @@ import './components.css';
 import Place from './Place';
 import Search from './Search';
 import Settings from './Settings';
-import ThemeContext from '../constext/theme.context';
+
 
 
 import React from 'react'
