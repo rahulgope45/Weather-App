@@ -53,9 +53,9 @@
   font-size: 1rem;
   border-radius: 0.5rem;
 
-  background-color: #222; /* temp solid bg */
+  background-color: #30263a; /* temp solid bg */
   color: white;
-  border: 1px solid red; /* debug border */
+  border: 1px solid rgb(248, 248, 248); /* debug border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   transform: scale(0.95);
@@ -74,6 +74,35 @@
 }
 
 
+.systems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.system {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.6); /* thin white border */
+  border-radius: 6px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05); /* subtle background */
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.15); /* faint glow/flem */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.system:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.system.active {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
 
 
 

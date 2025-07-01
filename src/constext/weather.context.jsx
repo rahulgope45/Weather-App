@@ -1,5 +1,5 @@
 import React,{ createContext,useEffect,useState } from "react";
-import { DEFAULT_PLACE } from "../utils/Pindex";
+import { DEFAULT_PLACE , MEASURMENT_SYSTEMS} from "../utils/Pindex";
 import { getWheatherData } from "../api";
 
 const WeatherContext = createContext()
@@ -10,6 +10,7 @@ function WeatherProvider({children}) {
   const [currentWeather,setCurrentWeather] = useState({})
    const [hourlyForcast,setHourlyForecast] = useState([])
     const [dailyForcast,setDailyForeCast] = useState([])
+    const [measurementSystem,setMeasurementSystems] = useState(MEASURMENT_SYSTEMS.AUTO)
 
 
     useEffect(() =>{
@@ -38,7 +39,7 @@ function WeatherProvider({children}) {
 
 
   return (
-    <WeatherContext.Provider value={{place,loading,currentWeather,hourlyForcast,dailyForcast}}>
+    <WeatherContext.Provider value={{place,loading,currentWeather,hourlyForcast,dailyForcast,measurementSystem,setMeasurementSystems}}>
         {children}
 
     </WeatherContext.Provider>

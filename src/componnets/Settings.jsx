@@ -2,6 +2,8 @@ import React,{useState,useContext} from 'react'
 import './Search.css';
 import ThemeContext from '../constext/theme.context';
 import { Themeprovider } from '../constext/theme.context';
+import { MEASURMENT_SYSTEMS } from '../utils/Pindex';
+import WeatherContext from '../constext/weather.context';
 
 
 
@@ -10,6 +12,14 @@ function Settings() {
 
   const [openSettings,setSettings] = useState(false)
    console.log('openSettings:', openSettings)
+
+   const {measurementSystem,setMeasurementSystems} = useContext(WeatherContext)
+
+   const changeMeasurementSystem = (system) =>{
+    setMeasurementSystems(system)
+    setSettings(false)
+
+   }
 
 
 const { darkMode, setdarkMode } = useContext(ThemeContext);
@@ -23,6 +33,7 @@ const toogleTheme =()=>{
     console.error('error')
   }
 }
+
 
 
 
@@ -46,15 +57,23 @@ const toogleTheme =()=>{
       </div>
       <div className='Settings-Button' onClick={() => setSettings(prevVal => !prevVal)}>
         
-          <i className="bi bi-gear"></i>
+          <i className={`bi bi-gear${openSettings ?  '-fill' : ''}`}></i>
         </div>
       <div className={`settings-menu ${openSettings ?  "open" : ""}`}>
        
 
         <div className='measurement-system'>
           <h4>Measurement Systems</h4>
-           <p>Metric</p>
-           <p>Imperial</p>
+           <div className='systems'>
+            {Object.values(MEASURMENT_SYSTEMS).map(system =>
+              <div className={`system ${system === measurementSystem ? 'active' : ''}`} 
+              key={system}
+              onClick={() => changeMeasurementSystem(system)}>
+                {system}
+                </div>
+            )}
+
+           </div>
         </div>
       </div>
     </div>

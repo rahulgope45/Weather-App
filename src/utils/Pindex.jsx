@@ -9,3 +9,12 @@ lon:"77.23149E",
 timezone:"Asia/Kolkata",
 type:"settlement"
 }
+
+
+export const MEASURMENT_SYSTEMS ={
+    AUTO : 'auto',
+    METRIC: 'metric',
+    UK: 'uk',
+    US : 'us',
+    CA: 'ca',
+}
