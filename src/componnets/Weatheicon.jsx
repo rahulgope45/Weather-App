@@ -4,7 +4,8 @@ function Weatheicon({iconnumber,summary}) {
   return (
     
          <img src={`dist/weather_icons/set03/big/${iconnumber}.png`}
-            alt={summary}/>
+            alt={summary}
+            draggable={false}/>
     
   )
 }
