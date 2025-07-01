@@ -1,5 +1,7 @@
 
 import Weatheicon from './Weatheicon';
+import WeatherContext from '../constext/weather.context';
+import { useContext } from 'react';
 
 function Weatherapp({data}){
 
@@ -11,14 +13,7 @@ function Weatherapp({data}){
 
     }=data
 
-    const units = {
-    precipitation: 'mm/h',
-    wind_speed: 'km/h',
-    humidity: '%',
-    uv_index: '',
-    cloud_cover: '%',
-    visibility: 'km',
-  };
+const {units} =useContext(WeatherContext)
 
     const otherInfoWidgets = [
     {
@@ -80,10 +75,10 @@ function Weatherapp({data}){
         </div>
         <div className='value-summary'>
             <div className='value-temp'>
-               <h1>{temperature} °C</h1>
+               <h1>{temperature} {units.temperature}</h1>
             </div>
             <div className='value-Feelslike'>
-               <h3>Feelslike {feels_like} °C</h3>
+               <h3>Feelslike {feels_like} {units.temperature}</h3>
 
             </div>
             <div className='value-summarytext'>

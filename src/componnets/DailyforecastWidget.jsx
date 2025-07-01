@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Weatheicon from './Weatheicon'
+import WeatherContext from '../constext/weather.context'
 
 
 
 function DailyforecastWidget({data}) {
-
+const {units} =useContext(WeatherContext)
   const{day, weather, icon, summary, precipitation
 ,temperature_max,temperature_min
 
@@ -49,15 +50,15 @@ Weather_Date.day = Weather_Date.day === now_Date.day ? 'Current' : Weather_Date.
         </div>
         <div className='D-temperature'>
           <div className='D-temp-max'>
-            <h3>Max :{Math.round(temperature_max)} °C</h3> 
+            <h3>Max :{Math.round(temperature_max)} {units.temperature}</h3> 
           </div>
           <div className='D-temp-min'>
-            <h3>Min :{Math.round(temperature_min)} °C</h3> 
+            <h3>Min :{Math.round(temperature_min)} {units.temperature}</h3> 
           </div>
          
         </div>
         <div className='H-percipitation'>
-          <p>  {Math.round(precipitation.total)} mm/h</p> 
+          <p>  {Math.round(precipitation.total)} {units.precipitation}</p> 
         </div>
         
       

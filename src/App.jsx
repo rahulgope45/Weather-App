@@ -33,8 +33,8 @@ function App() {
       <>
     
     <Weatherapp data={currentWeather}/>
-    {/* <Forcast type='hourly' title ='HOURLY FORECAST' data={hourlyForcast}/>
-    <Forcast type='dail' title ='21 DAYS FORECAST'  data={dailyForcast}/> */}
+    <Forcast type='hourly' title ='HOURLY FORECAST' data={hourlyForcast}/>
+    <Forcast type='dail' title ='21 DAYS FORECAST'  data={dailyForcast}/>
      
    
       </>

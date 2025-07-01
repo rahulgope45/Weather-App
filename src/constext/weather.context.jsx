@@ -1,5 +1,5 @@
 import React,{ createContext,useEffect,useState } from "react";
-import { DEFAULT_PLACE , MEASURMENT_SYSTEMS} from "../utils/Pindex";
+import { DEFAULT_PLACE , MEASURMENT_SYSTEMS , UNITS} from "../utils/Pindex";
 import { getWheatherData } from "../api";
 
 const WeatherContext = createContext()
@@ -11,6 +11,7 @@ function WeatherProvider({children}) {
    const [hourlyForcast,setHourlyForecast] = useState([])
     const [dailyForcast,setDailyForeCast] = useState([])
     const [measurementSystem,setMeasurementSystems] = useState(MEASURMENT_SYSTEMS.AUTO)
+    const [units,setUnits] = useState({})
 
 
     useEffect(() =>{
@@ -19,14 +20,15 @@ function WeatherProvider({children}) {
         setLoading(true)
 
         
-           const cw = await getWheatherData('current',place.place_id,'metric')
+           const cw = await getWheatherData('current',place.place_id,measurementSystem)
          setCurrentWeather(cw.current)
+         setUnits(UNITS[cw.units])
 
-         //const hf = await getWheatherData('hourly',place.place_id,'metric')
-         //setHourlyForecast(hf.hourly.data)
+         const hf = await getWheatherData('hourly',place.place_id,measurementSystem)
+         setHourlyForecast(hf.hourly.data)
 
-         //const df = await getWheatherData('daily',place.place_id,'metric')
-         //setDailyForeCast(df.daily.data)
+         const df = await getWheatherData('daily',place.place_id,measurementSystem)
+         setDailyForeCast(df.daily.data)
         
         
          
@@ -34,12 +36,19 @@ function WeatherProvider({children}) {
         
       }
       _getWheatherData()
-    },[place])
+    },[place,measurementSystem])
 
 
 
   return (
-    <WeatherContext.Provider value={{place,loading,currentWeather,hourlyForcast,dailyForcast,measurementSystem,setMeasurementSystems}}>
+    <WeatherContext.Provider value={{place,
+    loading,
+    currentWeather,
+    hourlyForcast,
+    dailyForcast,
+    measurementSystem
+    ,setMeasurementSystems,
+    units}}>
         {children}
 
     </WeatherContext.Provider>
