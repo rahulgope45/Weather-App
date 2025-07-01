@@ -5,7 +5,11 @@ import { Themeprovider } from '../constext/theme.context';
 
 
 
+
 function Settings() {
+
+  const [openSettings,setSettings] = useState(false)
+   console.log('openSettings:', openSettings)
 
 
 const { darkMode, setdarkMode } = useContext(ThemeContext);
@@ -40,9 +44,19 @@ const toogleTheme =()=>{
         
         
       </div>
-      <div className='Settings-Button'>
+      <div className='Settings-Button' onClick={() => setSettings(prevVal => !prevVal)}>
+        
           <i className="bi bi-gear"></i>
         </div>
+      <div className={`settings-menu ${openSettings ?  "open" : ""}`}>
+       
+
+        <div className='measurement-system'>
+          <h4>Measurement Systems</h4>
+           <p>Metric</p>
+           <p>Imperial</p>
+        </div>
+      </div>
     </div>
   )
 }

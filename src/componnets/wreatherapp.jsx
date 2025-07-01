@@ -1,31 +1,17 @@
-import { getCurrentWheather } from '../api'
+
 import Weatheicon from './Weatheicon';
-import React,{useState,useEffect} from 'react'
-function Weatherapp(){
+
+function Weatherapp({data}){
 
     
-  const [weatherData, setWeatherData] = useState(null);
-
-  useEffect(() => {
-    const fetchWeather = async () => {
-      const data = await getCurrentWheather(); // if getCurrentWheather is async
-      setWeatherData(data);
-    };
-
-    fetchWeather();
-  }, []);
-
-  if (!weatherData) {
-    return <p>Loading weather data...</p>;
-  }
 
     
-     const{icon_num,feels_like,summary,wind,cloud_cover,precipitation,humidity,temperature,
-        uv_index,visibility
+     const{icon_num,summary,wind,cloud_cover,precipitation,humidity,temperature,
+        uv_index,visibility,feels_like
 
-    }=weatherData
+    }=data
 
-      const units = {
+    const units = {
     precipitation: 'mm/h',
     wind_speed: 'km/h',
     humidity: '%',
@@ -94,14 +80,14 @@ function Weatherapp(){
         </div>
         <div className='value-summary'>
             <div className='value-temp'>
-               <h1>{weatherData.temperature} °C</h1>
+               <h1>{temperature} °C</h1>
             </div>
             <div className='value-Feelslike'>
-               <h3>Feelslike {weatherData.feels_like} °C</h3>
+               <h3>Feelslike {feels_like} °C</h3>
 
             </div>
             <div className='value-summarytext'>
-                <h3>{weatherData.summary}</h3>
+                <h3>{summary}</h3>
             </div>
         </div>
         </div>

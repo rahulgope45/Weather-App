@@ -27,12 +27,67 @@
   width: 100%;
 }
 
-.Settings-container{
+/* .Settings-container{
   display: flex;
    justify-content: space-between;
-  gap: 12px; /* or whatever spacing you prefer */
-  align-items: center; /* optional: vertically align */
+  gap: 12px; 
+  align-items: center; 
+} */
+
+.Settings-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative; /* so absolute children like settings-menu align properly */
+  overflow: visible;
 }
+
+.settings-menu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 8px); /* below the button */
+  right: 0;
+
+  width: 250px;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+
+  background-color: #222; /* temp solid bg */
+  color: white;
+  border: 1px solid red; /* debug border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  transform: scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.settings-menu.open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .theme-toggle-animate {

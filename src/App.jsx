@@ -9,13 +9,13 @@ import Loader from './componnets/Loader';
 
 import Weatherapp from './componnets/wreatherapp'
 import Header from './componnets/header'
-import { getDailyForecast ,getHourlyForecast } from './api';
+
 import WeatherContext from './constext/weather.context';
 
 function App() {
 
   const {darkMode} = useContext(ThemeContext)
-  const {loading} =useContext(WeatherContext)
+  const {loading,currentWeather,hourlyForcast,dailyForcast} =useContext(WeatherContext)
 
   // const [screen,setScreen] =useState(false)
 
@@ -26,14 +26,15 @@ function App() {
 
   return (
     <div className= {`App-${darkMode ? 'dark' : 'light'}`}>
+      <Header  />
      {loading ?(
       <Loader/>
     ):(
       <>
-    <Header  />
-    <Weatherapp/>
-    <Forcast type='hourly' title ='HOURLY FORECAST' data={getHourlyForecast()}/>
-    <Forcast type='dail' title ='21 DAYS FORECAST'  data={getDailyForecast()}/>
+    
+    <Weatherapp data={currentWeather}/>
+    {/* <Forcast type='hourly' title ='HOURLY FORECAST' data={hourlyForcast}/>
+    <Forcast type='dail' title ='21 DAYS FORECAST'  data={dailyForcast}/> */}
      
    
       </>
